@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>100</x><y>100</y><width>1000</width><height>620</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Painel de Stock - Loja de Informática</string>
+  </property>
+  
+  <property name="styleSheet">
+   <string>
+    QMainWindow { 
+        background-color: #f8fafc; 
+    }
+    QLabel#lbl_titulo { 
+        color: #0f172a; 
+        font-weight: 700; 
+        font-size: 20px; 
+    }
+    QLabel#lbl_relogio { 
+        color: #64748b; 
+        font-weight: 500; 
+        font-size: 13px; 
+    }
+    QGroupBox {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 13px;
+        color: #334155;
+        margin-top: 10px;
+        padding-top: 15px;
+    }
+    QLabel {
+        color: #475569;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    QLineEdit, QComboBox, QSpinBox {
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 6px 10px;
+        background-color: #ffffff;
+        color: #0f172a;
+    }
+    QLineEdit:focus, QComboBox:focus, QSpinBox:focus {
+        border: 2px solid #3b82f6;
+    }
+    QPushButton {
+        background-color: #f1f5f9;
+        color: #334155;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 6px;
+    }
+    QPushButton:hover {
+        background-color: #e2e8f0;
+    }
+    QPushButton#btn_adicionar {
+        background-color: #3b82f6;
+        color: white;
+    }
+    QPushButton#btn_adicionar:hover {
+        background-color: #2563eb;
+    }
+    QPushButton#btn_vender {
+        background-color: #fee2e2;
+        color: #dc2626;
+        border: 1px solid #fca5a5;
+    }
+    QPushButton#btn_vender:hover {
+        background-color: #fca5a5;
+    }
+    QPushButton#btn_repor {
+        background-color: #dcfce7;
+        color: #15803d;
+        border: 1px solid #86efac;
+    }
+    QPushButton#btn_repor:hover {
+        background-color: #86efac;
+    }
+    QTableWidget {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        gridline-color: #f1f5f9;
+        color: #334155;
+    }
+    QHeaderView::section {
+        background-color: #f8fafc;
+        color: #475569;
+        padding: 10px;
+        font-weight: 700;
+        border: none;
+        border-bottom: 2px solid #e2e8f0;
+    }
+   </string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainVerticalLayout">
+    <property name="spacing"><number>15</number></property>
+    <property name="leftMargin"><number>20</number></property>
+    <property name="topMargin"><number>20</number></property>
+    <property name="rightMargin"><number>20</number></property>
+    <property name="bottomMargin"><number>20</number></property>
+    
+    <item>
+     <layout class="QHBoxLayout" name="topLayout">
+      <item>
+       <layout class="QVBoxLayout" name="tituloSubLayout">
+        <item><widget class="QLabel" name="lbl_titulo"><property name="text"><string>Gestão de Stock</string></property></widget></item>
+        <item><widget class="QLabel" name="lbl_relogio"><property name="text"><string>A carregar...</string></property></widget></item>
+       </layout>
+      </item>
+      
+      <item><spacer name="topSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+      
+      <item>
+       <layout class="QHBoxLayout" name="menuBotoesLayout">
+        <property name="spacing"><number>8</number></property>
+        <item><widget class="QPushButton" name="btn_menu_empresa"><property name="text"><string>🏢 Empresa</string></property></widget></item>
+        <item><widget class="QPushButton" name="btn_menu_como_usar"><property name="text"><string>📖 Como Usar</string></property></widget></item>
+        <item><widget class="QPushButton" name="btn_menu_suporte"><property name="text"><string>🛠️ Suporte</string></property></widget></item>
+        <item><widget class="QPushButton" name="btn_menu_creditos"><property name="text"><string>👥 DEVs</string></property></widget></item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    
+    <item>
+     <layout class="QHBoxLayout" name="corpoLayout">
+      <property name="spacing"><number>15</number></property>
+      
+      <item>
+       <widget class="QGroupBox" name="grupo_cadastro">
+        <property name="minimumSize"><size><width>280</width><height>0</height></size></property>
+        <property name="maximumSize"><size><width>280</width><height>16777215</height></size></property>
+        <property name="title"><string>  Registar Artigo</string></property>
+        
+        <layout class="QVBoxLayout" name="formLayout">
+         <property name="spacing"><number>10</number></property>
+         <property name="leftMargin"><number>15</number></property>
+         <property name="rightMargin"><number>15</number></property>
+         
+         <item><widget class="QLabel" name="lbl_nome"><property name="text"><string>Nome do Produto</string></property></widget></item>
+         <item><widget class="QLineEdit" name="txt_nome"></widget></item>
+         
+         <item><widget class="QLabel" name="lbl_cat"><property name="text"><string>Categoria</string></property></widget></item>
+         <item>
+          <widget class="QComboBox" name="cb_categoria">
+           <item><property name="text"><string>Componentes</string></property></item>
+           <item><property name="text"><string>Periféricos</string></property></item>
+           <item><property name="text"><string>Computadores</string></property></item>
+          </widget>
+         </item>
+         
+         <item>
+          <layout class="QHBoxLayout" name="rowPrecoQtd">
+           <item>
+            <layout class="QVBoxLayout" name="subPreco">
+             <item><widget class="QLabel" name="lbl_preco"><property name="text"><string>Preço (€)</string></property></widget></item>
+             <item><widget class="QLineEdit" name="txt_preco"></widget></item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="subQtd">
+             <item><widget class="QLabel" name="lbl_qtd"><property name="text"><string>Qtd Inicial</string></property></widget></item>
+             <item><widget class="QSpinBox" name="txt_qtd"><property name="maximum"><number>999</number></property></widget></item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         
+         <item><widget class="QPushButton" name="btn_adicionar"><property name="text"><string>Adicionar Produto</string></property></widget></item>
+         
+         <item><spacer name="formSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item>
+         <item><widget class="QLabel" name="lbl_foto_painel"><property name="minimumSize"><size><width>248</width><height>120</height></size></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      
+      <item>
+       <layout class="QVBoxLayout" name="tabelaEBotoxLayout">
+        <property name="spacing"><number>12</number></property>
+        
+        <item><widget class="QTableWidget" name="tabela_produtos"><property name="columnCount"><number>5</number></property></widget></item>
+        
+        <item>
+         <layout class="QHBoxLayout" name="botoesAcaoLayout">
+          <property name="spacing"><number>15</number></property>
+          <item><widget class="QPushButton" name="btn_vender"><property name="minimumSize"><size><width>0</width><height>42</height></size></property><property name="text"><string>Registrar Venda (-1)</string></property></widget></item>
+          <item><widget class="QPushButton" name="btn_repor"><property name="minimumSize"><size><width>0</width><height>42</height></size></property><property name="text"><string>Repor Stock (+1)</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+</ui>
